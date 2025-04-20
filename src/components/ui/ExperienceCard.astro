@@ -1,0 +1,41 @@
+---
+// src/components/ui/ExperienceCard.astro
+interface Props {
+  company: string;
+  position: string;
+  startDate: string;
+  endDate?: string;
+  current?: boolean;
+  description: string;
+  
+}
+
+const { 
+  company,
+  position,
+  startDate,
+  endDate = "Actualidad",
+  current = false,
+  description,
+
+} = Astro.props;
+
+---
+
+<article class="">
+  <header class="experience-header">
+    <h3 class="experience-position">{position}</h3>
+    <h4 class="experience-company">{company}</h4>
+    <div class="experience-period">
+      <time>{startDate}</time> - <time>{current ? "Actualidad" : endDate}</time>
+    </div>
+  </header>
+  
+  <p>{description}</p>
+  
+  
+  <!-- <div class="experience-details">
+    <slot />
+  </div> -->
+</article>
+
