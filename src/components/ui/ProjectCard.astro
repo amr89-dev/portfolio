@@ -1,0 +1,25 @@
+---
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  technologies: string[];
+  links: string[];
+}
+
+const { title, description, technologies, links } = Astro.props as ProjectCardProps;
+---
+
+<div class="project-card">
+  <h3 class="project-title">{title}</h3>
+  <p class="project-description">{description}</p>
+  <ul class="project-technologies">
+    {technologies.map((technology) => (
+      <li class="project-technology">{technology}</li>
+    ))}
+  </ul>
+  <ul class="project-links">
+    {links.map((link) => (
+      <li class="project-link"><a href={link}>{link}</a></li>
+    ))}
+  </ul>
+</div>

@@ -1,0 +1,23 @@
+---
+import ProjectCard from '../ui/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+console.log(projects);
+---
+
+<section class="projects-section">
+  <h2 class="section-title">Proyectos</h2>
+  <ul class="project-list">
+    {projects.map((project) => (
+      <li class="project-item">
+        <ProjectCard 
+          title={project.data.title}
+          description={project.data.description}
+          technologies={project.data.technologies}
+          links={project.data.links}
+        />
+        </li>
+    ))}
+  </ul>
+</section>

@@ -6,7 +6,6 @@ interface Props {
   startDate: string;
   endDate?: string;
   current?: boolean;
-  description: string;
   
 }
 
@@ -16,7 +15,6 @@ const {
   startDate,
   endDate = "Actualidad",
   current = false,
-  description,
 
 } = Astro.props;
 
@@ -30,12 +28,9 @@ const {
       <time>{startDate}</time> - <time>{current ? "Actualidad" : endDate}</time>
     </div>
   </header>
-  
-  <p>{description}</p>
-  
-  
-  <!-- <div class="experience-details">
+    
+  <div class="">
     <slot />
-  </div> -->
+  </div>
 </article>
 

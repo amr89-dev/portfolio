@@ -2,10 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/ui/Card.astro';
 import About from '../components/sections/About.astro';
-import { getCollection } from 'astro:content';
-
-const experience = await getCollection('experience');
-console.log("-->",experience);
+import Experience from '../components/sections/Experience.astro';
+import Projects from '../components/sections/Projects.astro';
 ---
 
 <Layout title="Portfolio de Amado Martínez" > 
@@ -13,16 +11,15 @@ console.log("-->",experience);
   <Card href="/about" title="Sobre mí"   class="border-4 border-black col-span-4 row-span-3 bg-card-sapphire">
    <About />
   </Card>
-    <Card href="/about" title="Experiencia"  class="border-4 border-black col-span-2 row-span-5 col-start-5 bg-card-ruby">
-     
-      <p>2020 - 2023</p>
-      <p>Desarrollador Web</p>
-      
-    </Card>
-    <Card href="" title="Proyectos"  class="border-4 border-black col-span-3 row-span-4 row-start-4 bg-card-emerald">3</Card>
-    <Card href="" title="Contacto"  class="border-4 border-black row-span-2 col-start-4 row-start-4 bg-card-amethyst">4</Card>
-    <Card href="" title="Educación"  class="border-4 border-black row-span-2 col-start-4 row-start-6 bg-card-rose">5</Card>
-    <Card href="" title="Habilidades"  class="border-4 border-black col-span-2 row-span-2 col-start-5 row-start-6 bg-card-amber">6</Card>
+  <Card href="/about" title="Experiencia"  class="border-4 border-black col-span-2 row-span-5 col-start-5 bg-card-ruby">   
+      <Experience />
+  </Card>
+  <Card href="" title="Proyectos"  class="border-4 border-black col-span-3 row-span-4 row-start-4 bg-card-emerald">
+    <Projects />
+  </Card>
+  <Card href="" title="Contacto"  class="border-4 border-black row-span-2 col-start-4 row-start-4 bg-card-amethyst">4</Card>
+  <Card href="" title="Educación"  class="border-4 border-black row-span-2 col-start-4 row-start-6 bg-card-rose">5</Card>
+  <Card href="" title="Habilidades"  class="border-4 border-black col-span-2 row-span-2 col-start-5 row-start-6 bg-card-amber">6</Card>
 </div>
 </Layout>
 
