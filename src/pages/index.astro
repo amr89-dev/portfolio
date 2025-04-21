@@ -1,33 +1,62 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/ui/Card.astro';
-import About from '../components/sections/About.astro';
-import Experience from '../components/sections/Experience.astro';
-import Projects from '../components/sections/Projects.astro';
-import Contact from '../components/sections/Contact.astro';
-import Education from '../components/sections/Education.astro';
-import Stack from '../components/sections/Stack.astro';
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/ui/Card.astro'
+import About from '../components/sections/About.astro'
+import Experience from '../components/sections/Experience.astro'
+import Projects from '../components/sections/Projects.astro'
+import Contact from '../components/sections/Contact.astro'
+import Education from '../components/sections/Education.astro'
+import Stack from '../components/sections/Stack.astro'
 ---
 
-<Layout title="Portfolio de Amado Martínez" > 
-
-  <div class="grid grid-cols-12  gap-4 ">
-  <Card href="/about" title="Sobre mí"   class="border-4 border-black col-span-7 row-span-3 bg-card-sapphire" icon="user">
-   <About />
-  </Card>
-  <Card href="/about" title="Experiencia"  class="border-4 border-black col-span-5 row-span-5 col-start-8 bg-card-ruby" icon="briefcase">   
+<Layout title="Portfolio de Amado Martínez">
+  <div class="grid grid-cols-12 gap-4">
+    <Card
+      href="/about"
+      title="Sobre mí"
+      class="border-4 border-black col-span-7 row-span-3 bg-card-sapphire"
+      icon="user"
+    >
+      <About />
+    </Card>
+    <Card
+      href="/about"
+      title="Experiencia"
+      class="border-4 border-black col-span-5 row-span-5 col-start-8 bg-card-ruby"
+      icon="briefcase"
+    >
       <Experience />
-  </Card>
-  <Card href="" title="Proyectos"  class="border-4 border-black col-span-5 row-span-4 row-start-4 bg-card-emerald" icon="code">
-    <Projects />
-  </Card>
-  <Card href="" title="Contacto"  class="border-4 border-black col-span-2 row-span-2 col-start-6 row-start-4 bg-card-amethyst" icon="bookUser">
-    <Contact />
-  </Card>
-  <Card href="" title="Habilidades" icon="cpu"  class="border-4 border-black col-span-4 row-span-2 col-start-6 row-start-6 bg-card-rose" >
-    <Stack />
-  </Card>
-  <Card href="" title="Educación" icon="graduation" class="border-4 border-black col-span-3 row-span-2 col-start-10 row-start-6 bg-card-amber"><Education /></Card>
-</div>
+    </Card>
+    <Card
+      href=""
+      title="Proyectos"
+      class="border-4 border-black col-span-5 row-span-4 row-start-4 bg-card-emerald"
+      icon="code"
+    >
+      <Projects />
+    </Card>
+    <Card
+      href=""
+      title="Contacto"
+      class="border-4 border-black col-span-2 row-span-2 col-start-6 row-start-4 bg-card-amethyst"
+      icon="bookUser"
+    >
+      <Contact />
+    </Card>
+    <Card
+      href=""
+      title="Habilidades"
+      icon="cpu"
+      class="border-4 border-black col-span-4 row-span-2 col-start-6 row-start-6 bg-card-rose"
+    >
+      <Stack />
+    </Card>
+    <Card
+      href=""
+      title="Educación"
+      icon="graduation"
+      class="border-4 border-black col-span-3 row-span-2 col-start-10 row-start-6 bg-card-amber"
+      ><Education /></Card
+    >
+  </div>
 </Layout>
-
