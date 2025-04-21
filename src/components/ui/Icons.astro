@@ -1,0 +1,49 @@
+---
+
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  CodeXml, 
+  Briefcase,
+  GraduationCap,
+  User,
+  
+  BookUser,
+Cpu
+}  from '@lucide/astro';
+
+const iconMap = {
+  github: Github, 
+  linkedin: Linkedin, 
+  mail: Mail, 
+  code: CodeXml, 
+  briefcase: Briefcase, 
+  graduation: GraduationCap,
+  user: User, 
+  cpu: Cpu,
+  bookUser: BookUser 
+};
+
+interface Props {
+  name: string;
+  size?: number;
+  strokeWidth?: number;
+  class?: string;
+}
+
+const { 
+  name, 
+  size = 24, 
+  strokeWidth = 2,
+  class: className = "" 
+} = Astro.props;
+
+const IconComponent = iconMap[name as keyof typeof iconMap] || iconMap.code; 
+---
+
+<IconComponent
+  size={size}
+  stroke-width={strokeWidth}
+  class={className}
+/>

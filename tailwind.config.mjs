@@ -7,7 +7,7 @@ export default {
         sunshine: {
           DEFAULT: "#FACC15", // primary
           title: "#FDE047", // titleColor
-          text: "#FDE047", // textColor
+          text: "#FFFFFF", // textColor
         },
         card: {
           ruby: "#EF4444", // cardColor1 - rojo
@@ -17,6 +17,9 @@ export default {
           amber: "#F97316", // cardColor5 - naranja
           rose: "#EC4899", // cardColor6 - rosa
         },
+      },
+      boxShadow: {
+        brutal: "6px 6px 0 0 #000",
       },
     },
   },

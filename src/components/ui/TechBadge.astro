@@ -1,0 +1,63 @@
+---
+
+interface Props {
+  tech: string; 
+  size?: "sm" | "md" | "lg";
+  class?: string;
+}
+
+const { tech, size = "md", class: className = "" } = Astro.props;
+
+const techData = {
+  js: { 
+    name: "JavaScript", 
+    icon: "/svg/js.svg",
+    abbr: "JS"
+  },
+  ts: {
+    name: "TypeScript",
+    icon: "/svg/ts.svg",
+    abbr: "TS"
+  },
+  node: {
+    name: "Node.js",
+    icon: "/svg/node.svg",
+    abbr: "NODE"
+  },
+  next: {
+    name: "Next.js",
+    icon: "/svg/nextjs.svg",
+    abbr: "NEXT"
+  },
+  react: {
+    name: "React",
+    icon: "/svg/react.svg",
+    abbr: "REACT"
+  },
+  tailwind: {
+    name: "Tailwind CSS",
+    icon: "/svg/tailwind.svg",  
+    abbr: "TW"
+  },
+  
+ 
+};
+
+const data = techData[tech as keyof typeof techData] || { name: tech, icon: "/svg/javascript 1.svg", abbr: tech.toUpperCase() };
+
+
+const sizeClasses = {
+  sm: "h-6 text-xs",
+  md: "h-8 text-sm",
+  lg: "h-10 text-base"
+};
+
+
+
+---
+
+<div class={`flex flex-row items-center justify-center border-4 border-black overflow-hidden bg-sunshine px-2 py-1 gap-2`}>
+  <img src={data.icon} alt={data.name} class="w-4 h-4" />
+<p class="text-sm font-bold">{data.name}</p>
+</div>
+

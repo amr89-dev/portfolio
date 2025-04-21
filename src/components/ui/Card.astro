@@ -1,4 +1,6 @@
 ---
+import Icons from './Icons.astro';
+
 interface Props {
 	title: string;
 
@@ -22,10 +24,10 @@ const {
 
 ---
 
-<article class={className}>
-  <header class="card-header">
-    {icon && <span class="card-icon">{icon}</span>}
-    <h2 class="card-title">{title}</h2>
+<article class={className + " p-4  shadow-brutal"} >
+  <header class="flex flex-row gap-2 items-center  text-sunshine-title mb-2">
+    {icon && <Icons name={icon} />}
+    <h2 class="font-bold text-2xl">{title}</h2>
   </header>
   
   <div class="card-content">
