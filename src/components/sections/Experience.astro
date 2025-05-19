@@ -1,25 +1,28 @@
 ---
-import ExperienceCard from '../ui/ExperienceCard.astro';
-import { getCollection } from 'astro:content';
+import ExperienceCard from '../ui/ExperienceCard.astro'
+import { getCollection } from 'astro:content'
 
-const experience = await getCollection('experience');
+const experience = await getCollection('experience')
 ---
 
-<section class="experience-section">
-
+<section class="">
   <ul class="experience-list">
-    {experience.map((exp) => (
-      <li class="experience-item">
-        <ExperienceCard 
-          company={exp.data.company}
-          position={exp.data.position}
-          startDate={exp.data.startDate}
-          endDate={exp.data.endDate}
-          current={exp.data.currentJob}
-        >
-          <p>{exp.body}</p>
-        </ExperienceCard>
-      </li>
-    ))}
+    {
+      experience
+        .sort((a, b) => a.data.order - b.data.order)
+        .map((exp) => (
+          <li class="experience-item">
+            <ExperienceCard
+              company={exp.data.company}
+              position={exp.data.position}
+              startDate={exp.data.startDate}
+              endDate={exp.data.endDate}
+              current={exp.data.current}
+            >
+              <p>{exp.body}</p>
+            </ExperienceCard>
+          </li>
+        ))
+    }
   </ul>
 </section>

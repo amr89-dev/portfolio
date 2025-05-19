@@ -1,35 +1,26 @@
 ---
-import Icons from './Icons.astro';
+import Icons from './Icons.astro'
 
 interface Props {
-	title: string;
+  title: string
 
-	href: string;
-  image?: string;
-  alt?: string;
-  icon?: string;
-  class?: string;
-  content?: string;
+  href: string
+  image?: string
+  alt?: string
+  icon?: string
+  class?: string
+  content?: string
 }
 
-const { 
-  href, 
-  title, 
-  
-  icon, 
-  class: className,
-
-} = Astro.props;
-
-
+const { href, title, icon, class: className } = Astro.props
 ---
 
-<article class={className + " p-4  shadow-brutal"} >
-  <header class="flex flex-row gap-2 items-center  text-sunshine-title mb-2">
+<article class={className + ' p-4  shadow-brutal'}>
+  <header class="flex flex-row gap-2 items-center text-sunshine-title mb-2">
     {icon && <Icons name={icon} />}
     <h2 class="font-bold text-2xl">{title}</h2>
   </header>
-  
+
   <div class="card-content">
     <slot />
   </div>

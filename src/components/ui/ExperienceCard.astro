@@ -1,36 +1,40 @@
 ---
 // src/components/ui/ExperienceCard.astro
 interface Props {
-  company: string;
-  position: string;
-  startDate: string;
-  endDate?: string;
-  current?: boolean;
-  
+  company: string
+  position: string
+  startDate: string
+  endDate?: string
+  current?: boolean
 }
 
-const { 
-  company,
-  position,
-  startDate,
-  endDate = "Actualidad",
-  current = false,
+const { company, position, startDate, endDate = 'Actualidad', current } = Astro.props
 
-} = Astro.props;
+const formatDate = (date: string) => {
+  const dateObj = new Date(date)
+  return dateObj.toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'short',
+  })
+}
 
+console.log({ current })
 ---
 
-<article class="">
-  <header class="experience-header">
-    <h3 class="experience-position">{position}</h3>
-    <h4 class="experience-company">{company}</h4>
-    <div class="experience-period">
-      <time>{startDate}</time> - <time>{current ? "Actualidad" : endDate}</time>
+<article>
+  <header>
+    <h3 class="font-bold text-2xl text-white">{position}</h3>
+
+    <div class="flex flex-row gap-2 items-center">
+      <h4 class="text-sunshine-title">{company}</h4>
+      <span class="w-1 h-1 bg-black"></span>
+      <time>{formatDate(startDate)}</time> - <time
+        >{current ? 'Actualidad' : formatDate(endDate)}</time
+      >
     </div>
   </header>
-    
+
   <div class="">
     <slot />
   </div>
 </article>
-

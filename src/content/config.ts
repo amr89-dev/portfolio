@@ -1,4 +1,4 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection } from 'astro:content'
 
 const experienceCollection = defineCollection({
   schema: z.object({
@@ -6,11 +6,11 @@ const experienceCollection = defineCollection({
     position: z.string(),
     startDate: z.string().date(),
     endDate: z.string().optional(),
-    currentJob: z.boolean().default(false),
+    current: z.boolean().default(false),
     technologies: z.array(z.string()).optional(),
     order: z.number().default(99),
   }),
-});
+})
 
 const projectsCollection = defineCollection({
   schema: z.object({
@@ -20,9 +20,9 @@ const projectsCollection = defineCollection({
     links: z.array(z.string()).optional(),
     order: z.number().default(99),
   }),
-});
+})
 
 export const collections = {
   experience: experienceCollection,
   projects: projectsCollection,
-};
+}
