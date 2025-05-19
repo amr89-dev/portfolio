@@ -17,8 +17,6 @@ const formatDate = (date: string) => {
     month: 'short',
   })
 }
-
-console.log({ current })
 ---
 
 <article>
@@ -26,7 +24,7 @@ console.log({ current })
     <h3 class="font-bold text-2xl text-white">{position}</h3>
 
     <div class="flex flex-row gap-2 items-center">
-      <h4 class="text-sunshine-title">{company}</h4>
+      <h4 class="text-sunshine-title font-bold">{company}</h4>
       <span class="w-1 h-1 bg-black"></span>
       <time>{formatDate(startDate)}</time> - <time
         >{current ? 'Actualidad' : formatDate(endDate)}</time

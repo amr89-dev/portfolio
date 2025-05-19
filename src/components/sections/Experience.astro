@@ -11,7 +11,7 @@ const experience = await getCollection('experience')
       experience
         .sort((a, b) => a.data.order - b.data.order)
         .map((exp) => (
-          <li class="experience-item">
+          <li class="list-disc">
             <ExperienceCard
               company={exp.data.company}
               position={exp.data.position}
