@@ -17,8 +17,35 @@ const { title } = Astro.props
     <title>{title}</title>
   </head>
   <body
-    class="max-w-screen-2xl min-h-screen mx-auto bg-yellow-400 font-mono p-4 flex flex-col items-center justify-center overflow-hidden"
+    class="max-w-screen-2xl h-screen mx-auto bg-yellow-400 font-mono p-4 flex flex-col items-center justify-center overflow-hidden"
   >
     <slot />
   </body>
 </html>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border: none;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #333;
+  }
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: #f0f0f0;
+  }
+</style>

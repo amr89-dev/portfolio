@@ -9,6 +9,7 @@ const experience = await getCollection('experience')
   <ul class="experience-list -ml-2.5">
     {
       experience
+
         .sort((a, b) => a.data.order - b.data.order)
         .map((exp) => (
           <li class="flex items-start  ">
