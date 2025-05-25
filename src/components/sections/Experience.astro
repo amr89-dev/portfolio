@@ -6,13 +6,13 @@ const experience = await getCollection('experience')
 ---
 
 <section class="border-l-4 border-black ml-2">
-  <ul class="experience-list -ml-2.5">
+  <ul class="experience-list -ml-2.5 pb-4">
     {
       experience
-
+        .slice(0, 2)
         .sort((a, b) => a.data.order - b.data.order)
         .map((exp) => (
-          <li class="flex items-start  ">
+          <li class="flex items-start ">
             <span class="p-1 w-1 border-4 border-black mt-2 bg-card-ruby " />
             <ExperienceCard
               company={exp.data.company}

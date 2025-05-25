@@ -9,7 +9,7 @@ const projects = await getCollection('projects')
   <h2 class="section-title">Proyectos</h2>
   <ul class="project-list">
     {
-      projects.map((project) => (
+      projects.slice(0, 1).map((project) => (
         <li class="project-item">
           <ProjectCard
             title={project.data.title}
