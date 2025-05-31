@@ -38,18 +38,38 @@ const techData = {
     icon: '/svg/tailwind.svg',
     abbr: 'TW',
   },
+  postgres: {
+    name: 'PostgreSQL',
+    icon: '/svg/postgresql.svg',
+    abbr: 'PG',
+  },
+  git: {
+    name: 'Git',
+    icon: '/svg/git.svg',
+    abbr: 'GIT',
+  },
+  github: {
+    name: 'GitHub',
+    icon: '/svg/github.svg',
+    abbr: 'GITHUB',
+  },
+  astro: {
+    name: 'Astro',
+    icon: '/svg/astro.svg',
+    abbr: 'ASTRO',
+  },
 }
 
 const data = techData[tech as keyof typeof techData] || {
-  name: tech,
-  icon: '/svg/javascript 1.svg',
-  abbr: tech.toUpperCase(),
+  name: '...',
+
+  abbr: '...',
 }
 ---
 
 <div
   class={`flex flex-row items-center justify-center border-4 border-black overflow-hidden bg-sunshine px-2 py-1 gap-2`}
 >
-  <img src={data.icon} alt={data.name} class="w-4 h-4" />
-  <p class="text-sm font-bold">{data.name}</p>
+  {data.icon && <img src={data.icon} alt={data.name} class="w-4 h-4" />}
+  <p class="text-xs font-bold">{data.name}</p>
 </div>
