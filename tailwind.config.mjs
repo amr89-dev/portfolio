@@ -18,10 +18,42 @@ export default {
           rose: '#EC4899', // cardColor6 - rosa
         },
       },
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: theme('colors.black'),
+            p: {
+              marginTop: '0.5em',
+              marginBottom: '0.5em',
+            },
+            strong: {
+              color: theme('colors.black'),
+              fontWeight: '700',
+            },
+            li: {
+              marginTop: '0.25em',
+              marginBottom: '0.25em',
+            },
+          },
+        },
+        sm: {
+          css: {
+            fontSize: '0.875rem',
+            lineHeight: '1.5rem',
+          },
+        },
+        lg: {
+          css: {
+            fontSize: '1.125rem',
+            lineHeight: '1.75rem',
+          },
+        },
+      }),
       boxShadow: {
         brutal: '6px 6px 0 0 #000',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

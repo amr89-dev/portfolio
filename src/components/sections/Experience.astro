@@ -1,8 +1,15 @@
 ---
 import ExperienceCard from '../ui/ExperienceCard.astro'
 import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 
 const experience = await getCollection('experience')
+const renderedExperiences = await Promise.all(
+  experience
+    .slice(0, 2)
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((exp: CollectionEntry<'experience'>) => exp.render())
+)
 ---
 
 <section class="border-l-4 border-black ml-2">
@@ -11,20 +18,25 @@ const experience = await getCollection('experience')
       experience
         .slice(0, 2)
         .sort((a, b) => a.data.order - b.data.order)
-        .map((exp) => (
-          <li class="flex items-start mb-4">
-            <span class="p-1 w-1 border-4 border-black mt-2 bg-card-ruby " />
-            <ExperienceCard
-              company={exp.data.company}
-              position={exp.data.position}
-              startDate={exp.data.startDate}
-              endDate={exp.data.endDate}
-              current={exp.data.current}
-            >
-              <p>{exp.body}</p>
-            </ExperienceCard>
-          </li>
-        ))
+        .map((exp, index) => {
+          const { Content } = renderedExperiences[index];
+          return (
+            <li class="flex items-start mb-4">
+              <span class="p-1 w-1 border-4 border-black mt-2 bg-card-ruby " />
+              <ExperienceCard
+                company={exp.data.company}
+                position={exp.data.position}
+                startDate={exp.data.startDate}
+                endDate={exp.data.endDate}
+                current={exp.data.current}
+              >
+                <div class="prose prose-sm md:prose lg:prose-lg prose-headings:text-black prose-strong:text-sunshine-title">
+                  <Content />
+                </div>
+              </ExperienceCard>
+            </li>
+          );
+        })
     }
   </ul>
 </section>

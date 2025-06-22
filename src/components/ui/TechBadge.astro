@@ -10,59 +10,59 @@ const { tech, size = 'md', class: className = '' } = Astro.props
 const techData = {
   js: {
     name: 'JavaScript',
-    icon: '/svg/js.svg',
+    icon: './src/assets/IconSprite.svg#icon-javascript',
     abbr: 'JS',
   },
   ts: {
     name: 'TypeScript',
-    icon: '/svg/ts.svg',
+    icon: './src/assets/IconSprite.svg#icon-typescript',
     abbr: 'TS',
   },
   node: {
     name: 'Node.js',
-    icon: '/svg/node.svg',
+    icon: './src/assets/IconSprite.svg#icon-node',
     abbr: 'NODE',
   },
   next: {
     name: 'Next.js',
-    icon: '/svg/nextjs.svg',
+    icon: './src/assets/IconSprite.svg#icon-nextjs',
     abbr: 'NEXT',
   },
   react: {
     name: 'React',
-    icon: '/svg/react.svg',
+    icon: './src/assets/IconSprite.svg#icon-react',
     abbr: 'REACT',
   },
   tailwind: {
-    name: 'Tailwind CSS',
-    icon: '/svg/tailwind.svg',
+    name: 'Tailwind',
+    icon: './src/assets/IconSprite.svg#icon-tailwind',
     abbr: 'TW',
   },
   postgres: {
     name: 'PostgreSQL',
-    icon: '/svg/postgresql.svg',
+    icon: './src/assets/IconSprite.svg#icon-postgresql',
     abbr: 'PG',
   },
   git: {
     name: 'Git',
-    icon: '/svg/git.svg',
+    icon: './src/assets/IconSprite.svg#icon-git',
     abbr: 'GIT',
   },
   github: {
     name: 'GitHub',
-    icon: '/svg/github.svg',
+    icon: './src/assets/IconSprite.svg#icon-github',
     abbr: 'GITHUB',
   },
   astro: {
     name: 'Astro',
-    icon: '/svg/astro.svg',
+    icon: './src/assets/IconSprite.svg#icon-astro',
     abbr: 'ASTRO',
   },
 }
 
 const data = techData[tech as keyof typeof techData] || {
   name: '...',
-
+  icon: '',
   abbr: '...',
 }
 ---
@@ -70,6 +70,12 @@ const data = techData[tech as keyof typeof techData] || {
 <div
   class={`flex flex-row items-center justify-center border-4 border-black overflow-hidden bg-sunshine px-2 py-1 gap-2`}
 >
-  {data.icon && <img src={data.icon} alt={data.name} class="w-4 h-4" />}
+  {
+    data.icon && (
+      <svg class="w-4 h-4 flex items-center justify-center" preserveAspectRatio="xMidYMid meet">
+        <use href={data.icon} />
+      </svg>
+    )
+  }
   <p class="text-xs font-bold">{data.name}</p>
 </div>
