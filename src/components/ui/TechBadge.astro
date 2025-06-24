@@ -68,11 +68,11 @@ const data = techData[tech as keyof typeof techData] || {
 ---
 
 <div
-  class={`flex flex-row items-center justify-center border-4 border-black overflow-hidden bg-sunshine px-2 py-1 gap-2`}
+  class={`flex flex-row items-center justify-center border-4 border-black overflow-hidden bg-sunshine px-2 py-1 gap-2 `}
 >
   {
     data.icon && (
-      <svg class="w-4 h-4 flex items-center justify-center" preserveAspectRatio="xMidYMid meet">
+      <svg class="w-4 h-4 flex items-center justify-center ">
         <use href={data.icon} />
       </svg>
     )
