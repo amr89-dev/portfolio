@@ -17,7 +17,7 @@ const { href, title, icon, class: className } = Astro.props
 
 <article class={className + '  '}>
   <header
-    class="flex flex-row gap-2 items-center text-sunshine-title mb-2 sticky top-0 bg-inherit px-4 pt-4"
+    class="flex flex-row gap-2 items-center text-sunshine-title mb-2 sticky top-0 bg-inherit p-4 pb-1"
   >
     {icon && <Icons name={icon} />}
     <h2 class="font-bold text-2xl">{title}</h2>

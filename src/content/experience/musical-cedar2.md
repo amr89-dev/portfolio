@@ -15,4 +15,9 @@ order: 1
 ---
 
 Diseñé y desarrollé un portal B2B dedicado para optimizar el ciclo de pedidos de distribuidores.
-Desarrollé una API de integración con SAP Business One para garantizar la sincronización fluida de datos. A través de una aplicación web, unifiqué los pedidos de Shopify en una única fuente de información en tiempo real para los equipos comerciales y logísticos. Transformé la gestión de PQR con una plataforma que incluye formulario y dashboard de gestión para agilizar la atención al cliente, elevando la eficiencia operativa y la capacidad de respuesta organizacional.
+
+Desarrollé una API de integración con SAP Business One para garantizar la sincronización fluida de datos.
+
+A través de una aplicación web, unifiqué los pedidos de Shopify en una única fuente de información en tiempo real para los equipos comerciales y logísticos.
+
+Transformé la gestión de PQR con una plataforma que incluye formulario y dashboard de gestión para agilizar la atención al cliente, elevando la eficiencia operativa y la capacidad de respuesta organizacional.

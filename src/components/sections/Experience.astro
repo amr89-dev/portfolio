@@ -19,7 +19,7 @@ const renderedExperiences = await Promise.all(
         .slice(0, 2)
         .sort((a, b) => a.data.order - b.data.order)
         .map((exp, index) => {
-          const { Content } = renderedExperiences[index];
+          const { Content } = renderedExperiences[index]
           return (
             <li class="flex items-start mb-4">
               <span class="p-1 w-1 border-4 border-black mt-2 bg-card-ruby " />
@@ -30,12 +30,12 @@ const renderedExperiences = await Promise.all(
                 endDate={exp.data.endDate}
                 current={exp.data.current}
               >
-                <div class="prose prose-sm md:prose lg:prose-lg prose-headings:text-black prose-strong:text-sunshine-title">
+                <div class="">
                   <Content />
                 </div>
               </ExperienceCard>
             </li>
-          );
+          )
         })
     }
   </ul>

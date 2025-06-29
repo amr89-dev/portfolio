@@ -17,4 +17,8 @@ color: 'red'
 order: 2
 ---
 
-Mediante el diseño y desarrollo de una aplicación web, transformé la gestión de órdenes del taller, reduciendo los tiempos de entrega, optimizando la organización interna y fortaleciendo la comunicación con los clientes, logrando una eficiencia operativa y una experiencia de servicio notablemente mejorada.
+Mediante el diseño y desarrollo de una aplicación web, transformé la gestión de órdenes del taller, reduciendo los tiempos de entrega.
+
+La optimización de la organización interna permitió mejorar significativamente los procesos del taller.
+
+El fortalecimiento de la comunicación con los clientes resultó en una experiencia de servicio notablemente mejorada.
