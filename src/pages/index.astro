@@ -10,52 +10,52 @@ import Stack from '../components/sections/Stack.astro'
 ---
 
 <Layout title="Portfolio de Amado Martínez">
-  <div class="grid grid-cols-12 grid-rows-[auto] gap-4 h-[695px]">
+  <div class="grid grid-cols-1 lg:grid-cols-12 grid-rows-[auto] gap-4 h-[695px]">
     <Card
       href="/about"
       title="Sobre mí"
-      class="border-4 border-black col-span-7 row-span-3 max-h-[calc(3*100dvh/7)] bg-card-sapphire"
+      class="border-4 border-black lg:col-span-7 lg:row-span-3 lg:max-h-[calc(3*100dvh/7)] bg-card-sapphire"
       icon="user"
     >
       <About />
     </Card>
     <Card
-      href="/about"
+      href="/experience"
       title="Experiencia"
-      class="border-4 border-black col-span-5 row-span-5 max-h-[calc(5*100dvh/7)] col-start-8 bg-card-ruby overflow-y-auto"
+      class="border-4 border-black lg:col-span-5 lg:row-span-5 lg:max-h-[calc(5*100dvh/7)] lg:col-start-8 bg-card-ruby lg:overflow-y-auto"
       icon="briefcase"
     >
       <Experience />
     </Card>
     <Card
-      href=""
+      href="/projects"
       title="Proyectos"
-      class="border-4 border-black col-span-5 row-span-4 row-start-4 max-h-[calc(4*100dvh/7)] bg-card-emerald overflow-y-auto"
+      class="border-4 border-black lg:col-span-5 lg:row-span-4 lg:row-start-4 lg:max-h-[calc(4*100dvh/7)] bg-card-emerald lg:overflow-y-auto"
       icon="code"
     >
       <Projects />
     </Card>
     <Card
-      href=""
+      href="/contact"
       title="Contacto"
-      class="border-4 border-black col-span-2 row-span-2 col-start-6 row-start-4 max-h-[calc(2*100dvh/7)] bg-card-amethyst"
+      class="border-4 border-black lg:col-span-2 lg:row-span-2 lg:col-start-6 lg:row-start-4 lg:max-h-[calc(2*100dvh/7)] bg-card-amethyst"
       icon="bookUser"
     >
       <Contact />
     </Card>
     <Card
-      href=""
+      href="/stack"
       title="Habilidades"
       icon="cpu"
-      class="border-4 border-black col-span-4 row-span-2 col-start-6 row-start-6 max-h-[calc(2*100dvh/7)] bg-card-rose"
+      class="border-4 border-black lg:col-span-4 lg:row-span-2 lg:col-start-6 lg:row-start-6 lg:max-h-[calc(2*100dvh/7)] bg-card-rose"
     >
       <Stack />
     </Card>
     <Card
-      href=""
+      href="/education"
       title="Educación"
       icon="graduation"
-      class="border-4 border-black col-span-3 row-span-2 col-start-10 row-start-6 max-h-[calc(2*100dvh/7)] bg-card-amber"
+      class="border-4 border-black lg:col-span-3 lg:row-span-2 lg:col-start-10 lg:row-start-6 lg:max-h-[calc(2*100dvh/7)] bg-card-amber"
     >
       <Education />
     </Card>
