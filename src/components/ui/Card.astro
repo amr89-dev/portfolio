@@ -2,9 +2,8 @@
 import Icons from './Icons.astro'
 
 interface Props {
+  href?: string
   title: string
-
-  href: string
   image?: string
   alt?: string
   icon?: string
@@ -12,7 +11,7 @@ interface Props {
   content?: string
 }
 
-const { href, title, icon, class: className } = Astro.props
+const { title, icon, class: className } = Astro.props
 ---
 
 <article class={className + '  '}>

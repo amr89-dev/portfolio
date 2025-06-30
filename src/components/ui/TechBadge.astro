@@ -1,11 +1,10 @@
 ---
 interface Props {
   tech: string
-  size?: 'sm' | 'md' | 'lg'
   class?: string
 }
 
-const { tech, size = 'md', class: className = '' } = Astro.props
+const { tech, class: className = '' } = Astro.props
 
 const techData = {
   js: {
