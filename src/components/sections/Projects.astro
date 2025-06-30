@@ -8,16 +8,20 @@ const projects = await getCollection('projects')
 <section class="projects-section">
   <ul class="flex flex-col gap-2">
     {
-      projects.slice(0, 3).map((project) => (
-        <li class="project-item">
-          <ProjectCard
-            title={project.data.title}
-            description={project.data.description}
-            technologies={project.data.technologies}
-            links={project.data.links}
-          />
-        </li>
-      ))
+      projects
+        .sort((a, b) => a.data.order - b.data.order)
+        .slice(0, 1)
+        .map((project) => (
+          <li class="project-item">
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              technologies={project.data.technologies}
+              links={project.data.links}
+              image={project.data.image}
+            />
+          </li>
+        ))
     }
   </ul>
 </section>

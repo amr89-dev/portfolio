@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import Icons from './Icons.astro'
 
 interface ProjectCardProps {
@@ -6,18 +7,24 @@ interface ProjectCardProps {
   description: string
   technologies: string[]
   links: { name: string; url: string }[]
+  image: string
 }
 
-const { title, description, technologies, links } = Astro.props as ProjectCardProps
+const { title, description, technologies, links, image } = Astro.props as ProjectCardProps
 ---
 
 <div class="flex flex-row border-4 border-black overflow-hidden bg-green-600">
-  <div class="w-1/4">
-    <img src={technologies[0]} alt={title} />
+  <div class="w-1/4 max-h-[160px] flex items-center justify-center p-3">
+    <Image
+      src={image}
+      alt={title}
+      inferSize
+      class="w-full h-full object-fit border-4 border-black"
+    />
   </div>
   <div class="w-3/4 px-2 py-1 flex flex-col gap-2">
     <h3 class="font-bold text-2xl text-white">{title}</h3>
-    <p class="text-base text-white">{description}</p>
+    <p class="text-sm text-white">{description}</p>
 
     <ul class="flex flex-row gap-2">
       {

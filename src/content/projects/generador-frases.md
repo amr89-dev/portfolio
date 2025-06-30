@@ -7,5 +7,5 @@ links:
     { name: 'Código', url: 'https://github.com/usuario/generador-frases' },
     { name: 'Demo', url: 'https://generador-frases.vercel.app' },
   ]
-order: 1
+order: 8
 ---
