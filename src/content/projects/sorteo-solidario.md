@@ -5,7 +5,7 @@ technologies: ['React', 'JavaScript', 'CSS', 'Firebase']
 links:
   [
     { name: 'Código', url: 'https://github.com/usuario/sorteo-solidario' },
-    { name: 'Demo', url: 'https://sorteo-solidario-demo.netlify.app' },
+    { name: 'Demo', url: 'https://sorteo-guitarra.vercel.app/' },
   ]
 image: '../../assets/images/sorteo-solidario.webp'
 order: 1
