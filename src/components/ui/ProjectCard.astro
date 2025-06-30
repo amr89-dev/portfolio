@@ -1,25 +1,33 @@
 ---
+import Icons from './Icons.astro'
+
 interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  links: string[];
+  title: string
+  description: string
+  technologies: string[]
+  links: { name: string; url: string }[]
 }
 
-const { title, description, technologies, links } = Astro.props as ProjectCardProps;
+const { title, description, technologies, links } = Astro.props as ProjectCardProps
 ---
 
-<div class="project-card">
-  <h3 class="project-title">{title}</h3>
-  <p class="project-description">{description}</p>
-  <ul class="project-technologies">
-    {technologies.map((technology) => (
-      <li class="project-technology">{technology}</li>
-    ))}
-  </ul>
-  <ul class="project-links">
-    {links.map((link) => (
-      <li class="project-link"><a href={link}>{link}</a></li>
-    ))}
-  </ul>
+<div class="flex flex-row border-4 border-black overflow-hidden bg-green-600">
+  <div class="w-1/4">
+    <img src={technologies[0]} alt={title} />
+  </div>
+  <div class="w-3/4 px-2 py-1 flex flex-col gap-2">
+    <h3 class="font-bold text-2xl text-white">{title}</h3>
+    <p class="text-base text-white">{description}</p>
+
+    <ul class="flex flex-row gap-2">
+      {
+        links.map((link) => (
+          <li class="flex flex-row items-center justify-center border-4 border-black overflow-hidden bg-sunshine px-2 py-1 gap-2 text-xs font-bold">
+            <Icons name={link.name === 'Demo' ? 'globe' : 'code'} size={18} />
+            <a href={link.url}>{link.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </div>

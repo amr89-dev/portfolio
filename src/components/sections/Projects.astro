@@ -6,10 +6,9 @@ const projects = await getCollection('projects')
 ---
 
 <section class="projects-section">
-  <h2 class="section-title">Proyectos</h2>
-  <ul class="project-list">
+  <ul class="flex flex-col gap-2">
     {
-      projects.slice(0, 1).map((project) => (
+      projects.slice(0, 3).map((project) => (
         <li class="project-item">
           <ProjectCard
             title={project.data.title}
